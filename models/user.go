@@ -2,7 +2,10 @@ package models
 
 import (
 	"time"
-	"uuid"
+
+	"github.com/google/uuid"
+
+	"gorm.io/gorm"
 )
 
 type User struct {
