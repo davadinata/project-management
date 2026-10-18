@@ -38,6 +38,7 @@ for _, s := range parts{
 
 	}
 	return nil
+}
 
 func (a UUIDArray)Value()(driver.Value, error){ {
 	if len(a) == 0 {
@@ -54,3 +55,5 @@ func (a UUIDArray)Value()(driver.Value, error){ {
 func (UUIDArray) GormDataType() string {
 	return "uuid[]"
 }
+}
+	
