@@ -63,7 +63,7 @@ func getEnv(key, fallback string) string {
 func ConnectDB() {
 	cfg := AppConfig
 
-	dsn := fmt.Sprint("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		cfg.DBHost, cfg.DBPort, cfg.DBUser, cfg.DBPassword, cfg.DBName)
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
