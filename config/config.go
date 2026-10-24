@@ -17,16 +17,15 @@ var (
 )
 
 type Config struct {
-	APPPort          string
-	DBHost           string
-	DBPort           string
-	DBUser           string
-	DBPassword       string
-	DBName           string
-	JWTSecret        string
-	JWTExpire        string
-	JWTExpireMinutes string
-	JWTRefreshToken  string
+	APPPort         string
+	DBHost          string
+	DBPort          string
+	DBUser          string
+	DBPassword      string
+	DBName          string
+	JWTSecret       string
+	JWTExpire       string
+	JWTRefreshToken string
 }
 
 func LoadEnv() {
@@ -37,15 +36,15 @@ func LoadEnv() {
 	}
 
 	AppConfig = &Config{
-		APPPort:          getEnv("PORT", "3030"),
-		DBHost:           getEnv("DB_HOST", "localhost"),
-		DBPort:           getEnv("DB_PORT", "5432"),
-		DBUser:           getEnv("DB_USER", "dave"),
-		DBPassword:       getEnv("DB_PASSWORD", "123456"),
-		DBName:           getEnv("DB_NAME", "project_management"),
-		JWTSecret:        getEnv("JWT_SECRET", "supersecret"),
-		JWTExpireMinutes: getEnv("JWT_EXPIRE_MINUTES", "6000"),
-		JWTRefreshToken:  getEnv("REFRESH_TOKEN_EXPIRED", "24h"),
+		APPPort:    getEnv("PORT", "3030"),
+		DBHost:     getEnv("DB_HOST", "localhost"),
+		DBPort:     getEnv("DB_PORT", "5432"),
+		DBUser:     getEnv("DB_USER", "dave"),
+		DBPassword: getEnv("DB_PASSWORD", "123456"),
+		DBName:     getEnv("DB_NAME", "project_management"),
+		JWTSecret:  getEnv("JWT_SECRET", "supersecret"),
+
+		JWTRefreshToken: getEnv("REFRESH_TOKEN_EXPIRED", "24h"),
 	}
 
 }
