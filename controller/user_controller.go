@@ -5,6 +5,7 @@ import (
 	"github.com/davadinata/project-management/services"
 	"github.com/davadinata/project-management/utils"
 	"github.com/gofiber/fiber/v3"
+	"github.com/jinzhu/copier"
 )
 
 type UserController struct {
@@ -25,5 +26,9 @@ func (c *UserController) Register(ctx fiber.Ctx) error {
 	if err := c.service.Register(user); err != nil {
 		return utils.BadRequest(ctx, "Failed to register user", err.Error())
 	}
-	return utils.Success(ctx, "User registered successfully", user)
+
+	var userResp models.UserResponse
+	_ = copier.Copy(&userResp, user)
+
+	return utils.Success(ctx, "User registered successfully", userResp)
 }
